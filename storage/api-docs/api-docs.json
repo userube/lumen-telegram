@@ -1,0 +1,121 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Telegram Subscription",
+        "description": "Telegram Channel",
+        "contact": {
+            "name": "Samuel Erube",
+            "email": "skwarus@yahoo.com"
+        },
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/v1/subscribe": {
+            "get": {
+                "tags": [
+                    "Telegram"
+                ],
+                "summary": "Subscribe to bot",
+                "description": "Subscribe to bot",
+                "operationId": "subscribe",
+                "parameters": [
+                    {
+                        "name": "User-ID",
+                        "in": "header",
+                        "description": "User ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Subscribe user to chat bot",
+                "operationId": "c0877b649cf79858a3c7c92e9625a3ad",
+                "parameters": [
+                    {
+                        "name": "User-ID",
+                        "in": "header",
+                        "description": "User ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "chat_id"
+                                ],
+                                "properties": {
+                                    "chat_id": {
+                                        "description": "Unique chat ID of user",
+                                        "type": "integer",
+                                        "example": "1234567890"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/api/v1/send-message-to-user": {
+            "get": {
+                "tags": [
+                    "Telegram"
+                ],
+                "summary": "Send message to a user",
+                "description": "Send message to a user",
+                "operationId": "sendMessageToUser",
+                "parameters": [
+                    {
+                        "name": "User-ID",
+                        "in": "header",
+                        "description": "User ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        }
+    }
+}
